@@ -49,3 +49,30 @@ pom.xml
         <artifactId>elasticsearch-rest-high-level-client</artifactId>
         <version>7.17.5</version>
     </dependency>
+
+
+
+localhost:8080/v1/elasticsearch/logdata/createInBulk
+[
+    {
+        "id":"123",
+        "host":"abc.com",
+        "date":"2022-06-22",
+        "message":"This is test message for elasticsearch",
+        "size":30,
+        "status":"success"
+    },
+    {
+        "id":"234",
+        "host":"google.com",
+        "date":"2022-06-24",
+        "message":"This is test message for elasticsearch",
+        "size":20,
+        "status":"success"
+    }
+]
+
+localhost:8080/v1/elasticsearch/logdata/?host=abc.com
+
+[comment]: <> (Search in message)
+localhost:8080/v1/elasticsearch/logdata/search/?term=elasticsearch
